@@ -1,129 +1,116 @@
-console.log("***** SELECTORS Method *****")
-document.title = "FS!5 💥☪"
+console.log("***** SELECTORS *****")
+
+document.title = "FS15 DOM Intro 🎯"
+
 //*===========================================
 //*            GETELEMENTBYID()
 //*===========================================
+
 const header = document.getElementById("header")
 console.log(header)
 
-// ///? DOM bir obje modelidir key = value
-// /? atribute isimleri => camelCase
-
-// header.style.color = "white"     //? yontem-1 
+//? DOM bir obje modelidir
+//? key = value
+//? atribute isimleri => camelCase
 // header.style.backgroundColor = "green"
-header.style = "background-color:blue; color:yellow; font-familt:Tahoma" //? yontem-2
-
-
+// header.style.color = "white"
+header.style =
+  "background-color:green; color:white; font-size:20px; font-family:Tahoma"
 
 const h2 = document.getElementById("add-new-item")
 console.log(h2)
 
+//* Text elemanin icerigini okuma
+console.log(h2.textContent) //? ADD NEW ITEM
+console.log(h2.innerText) //? ADD NEW ITEM
+console.log(h2.innerHTML) //? ADD NEW ITEM
 
-//* Text elemaninin icerigini okuma
+//* Text elemanin icerigini degistirme
+h2.textContent = "ADD"
+h2.innerText = "ADD ITEM"
+h2.innerHTML = "<p>Deneme</p>"
 
-console.log(h2.textContent)
-console.log(h2.innerText)
-console.log(h2.innerHTML)
+h2.innerHTML = "<p>Deneme</p>"
 
-//* Text elemanini icerigini degistirme
-
-h2.textContent = " ADD" //? ADD
-h2.innerText = " ADD MORE" //? ADD MORE
-h2.innerHTML = "<p>ADD<p/>" //? ADD "guvenlik acigina sepep oldugundan cok kullanmamak lazim"
-// h2.innerText = "<p>ADD<p/>" //? <p>ADD<p/>
-
-
-document.getElementById("btn").value = "submit"
+//* Input elemanlarinin degeri value property'si ile degisir
+document.getElementById("btn").value = "Submit"
 
 const input = document.getElementById("input")
-input.value = "JAVA Scrip"
+input.value = "JavaScript"
 
 //*===========================================
 //*          GETELEMENTSBYTAGNAME()
 //*===========================================
 
-
 const lists = document.getElementsByTagName("li")
+
+//! HTML Collection DOM'un sundugu bir veri yapısıdır.
+//! Array-Like
 console.log(lists) //? HTMLCollection(5) [li.list, li.list, li.list, li.list, li.list]
-//! HTMLCOLLECTION DOM un sundugu bir veri yapisidir. array a benzer
 
-console.log("size:", lists.length) //? size: 5
+console.log("SIZE:", lists.length)
 
-//? FOR donguleri ile iteri edilebilir
-for (let li of lists){
-    console.log(li)
-    
+//? FOR donguleri itere edilebilir
+for (let li of lists) {
+  console.log(li.textContent)
 }
-for (let li of lists){
-    
-    console.log(li.textContent)
-    
-}
-for (let li of lists){
-    
-    console.log(li.innerText)
-}
+//? HTML Collection yapısından Array cevrilebilir.
+const listArray = [...lists] //? Spread ile array e cevrildi.
+listArray.forEach((li) => (li.style.color = "green"))
 
-//? HTML collection olan yapiyi array a cevirmek (spread ile)
+//? Array.from() metodu ile yine Array'e cevrim yapılabilir.
+Array.from(lists).forEach((li) => (li.style.backgroundColor = "yellow"))
 
-const listArray = [...lists]; //? array e cevrildi
-listArray.forEach((li) => (li.style.color = "green")) //? yontem -1
-
-//? HTML collection olan yapiyi array a cevirmek(array ile)
-Array.from(lists).map((li) => (li.style.backgroundColor = "lightgrey")) //? yontem-2
-
-
-//? ornek
-
+//? ORNEK
 const sections = document.getElementsByTagName("section")
-console.log(sections ) //? HTMLCollection(2) [section.add-item, section.item-list]
+console.log(sections) //? HTMLCollection(2) [section.add-item, section.item-list]
 
 sections[0].style.backgroundColor = "blue"
+sections[0].style.color = "yellow"
 
+sections[1].style.color = "blue"
 //*===========================================
 //*          GETELEMENTSBYCLASSNAME()
 //*===========================================
 
-const myList = document.getElementsByClassName("list")
-console.log(myList) //? HTMLCollection(2) [section.add-item, section.item-list]
-console.log(myList[0].innerText) 
-console.log(myList[2].innerText) 
-console.log(myList[3].innerText) 
+const myLists = document.getElementsByClassName("list")
+console.log(myLists) //?HTMLCollection(5) [li.list, li.list, li.list, li.list, li.list]
 
+console.log(myLists[3].innerText)
+
+const section = document.getElementsByClassName("item-list") //? tek elemanli bir dizi
+console.log(section[0])
 
 //* ========================================
 //*              QUERYSELECTOR()
 //* ========================================
-//! Query sellector ile id, tag, class secilebilir.
-//! bu secici akista gordugu ilk elementi secer
+// ! Query Selector ile id, tag, class seçilebilir.
+//! bu secici akısta gördügü ilk elementi secer.
 
-
-//? id almak (#)
-
+//? id almak için (#)
 console.log(document.querySelector("#header"))
 
-//? class almak (.)
+//? class almak için (.)
 console.log(document.querySelector(".item-list"))
 
-//? tag alamak icin onune birsey konmaz()
+//? tag almak için ()
 console.log(document.querySelector("h3"))
 
-console.log(document.querySelector("section.add-item #btn")) //? ic ice olan elementlerin icindekileri secebiliriz (multiple)
-console.log(document.querySelector("ul li:nth-child(4)").innerText)
+//? CSS selector
+console.log(document.querySelector("section.add-item #btn"))
 
+console.log(document.querySelector("ul li:nth-child(4)").innerText)
 //* ========================================
 //*              QUERYSELECTORALL()
 //* ========================================
+const itemLists = document.querySelectorAll("section.item-list li")
+console.log(itemLists) //? NodeList(5) [li.list, li.list, li.list, li.list, li.list]
 
-const itemList = document.querySelectorAll("section.item-list li")
-console.log(itemList) //? NodeList(5) [li.list, li.list, li.list, li.list, li.list]
+//* querySelectorAll bir nodelist dondurur. Nodelist dahali olarak forEach metmodunu barindirir. Ama istenirse spread veya Array.from() ile yine Array'e donusum yapilabilir.
 
+itemLists.forEach((li) => console.log(li))
 
-itemList.forEach((li) => console.log(li))
-
-console.log("********************************")
-
-for (let li of itemList.values()){
-    console.log(li)
+//? alternatif iterasyon
+for (let li of itemLists) {
+  console.log(li)
 }
-
