@@ -31,3 +31,25 @@
 //? Zincirleme olarak kullanilabilirler.
 
 console.log("Promise")
+
+const req = new Promise((resolve, reject) => {
+  const veri = { name: "Ahmet", surname: "Can" } //? mock data (gelen veri)
+
+  const basarili = Math.floor(Math.random() * 3) //? 0 1 2 .... 9
+  console.log(basarili)
+  if (basarili) {
+    resolve(veri)
+  } else {
+    reject("Network hatasi olustu")
+  }
+})
+
+req
+  .then((res) => {
+    //? basarili durumlari islemek icin then() metotlari kullanilr.
+    console.log(res)
+    return res
+  })
+  .then((x) => console.log(x.name)) //? zincirleme olarak kullanmak mümkündür.
+  .catch((err) => document.write(err)) //? hatayı handle etmek için catch kullanılr.
+  .finally(() => console.log("Her türlü calisir.")) //? baglaniyi sonlandirma

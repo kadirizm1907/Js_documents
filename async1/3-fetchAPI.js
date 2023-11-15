@@ -12,3 +12,6 @@
 
 console.log("FETCH")
 
+fetch("https://api.github.com/users")
+ .then((res)=> res.json())
+ .then((x)=>console.log(x))  
