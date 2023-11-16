@@ -11,28 +11,33 @@
 //? bir parametre almaktadir ve bu istegin cevabini gosteren bir Promise dondurmektedir.
 
 console.log("FETCH")
-let veri = ""
+let veri = "merhaba"
 fetch("https://api.github.com/users")
- .then((res)=>{
-    console.log(res)
-    if(!res.ok){
-        throw new Error(`hata: ${res.status}`)
+  .then((res) => {
+    // console.log(res)
+    if (!res.ok) {
+      //? Feetch api'da hatayi bizim yakalamiz gerekiyor.
+      throw new Error(`Hata: ${res.status}`) //? bir hata firlatiyoruz
     }
     return res.json()
- }) 
- .then((data)=>{
-    veri = data
-show(data)})
- .catch((err)=> console.log(err)) 
+  })
+  .then((data) => {
+    // veri = data
+    // console.log(veri)
+    show(data)
+  })
+  .catch((err) => document.write(err))
 
- const show = (users) => {
-    const userSection = document.getElementById("users")
-    users.forEach((user) => {
-     userSection.innerHTML += `
-      <h1> ${user.avatar_url}</h1> 
-     ` 
-     
-    })
-    }
-    
- 
+console.log(veri)
+
+const show = (users) => {
+  const userSection = document.getElementById("users")
+
+  users.forEach((user) => {
+    userSection.innerHTML += `
+        <h1>${user.login}</h1>
+        <img src="${user.avatar_url}" width="200px" alt="" />
+        <p><a href="${user.html_url}" target="_blank">URL</a></p> 
+    `
+  })
+}
