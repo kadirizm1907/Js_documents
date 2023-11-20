@@ -26,3 +26,6 @@ import ifade from "./hesapMakinasi.js"
 ifade()
 
 //! 1- import'lar hoisted olur bu yüzden herhangi bir yerde eklenebilir ancak best practice en üste eklenmeleridir.
+
+
+//! 2- 
