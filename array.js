@@ -79,7 +79,7 @@ function concatenate(...args){
    // Prints 'Raymond Red Reddington'
    console.log(concatenate('kadir', "tugbanur"))
 
-   //! spread ise atanan dgerleri yayarak ekler
+   //! spread ise atanan degerleri yayarak ekler
 
 let a = [1, 2, 3]
 let b = [4, 5]
