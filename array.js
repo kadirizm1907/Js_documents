@@ -41,7 +41,9 @@ console.log(empMale30)//?name: "bbbb", age: 35, gender: "male"
 
 let numb = [1, 2, 3, 4, 5];
 let addnumb = numb.reduce((acc, num) => acc + num, 0)
-console.log(addnumb)
+console.log(addnumb) //? 15
+let multiNumb = numb.reduce((acc, num) => acc * num, 1)//? 0 ile baslarsan tum degeri 0 yapar
+console.log(multiNumb)//? 120
 
 
 let top1 = [10, 25, 7, 90, 55];
@@ -52,4 +54,36 @@ let numMax = top1.reduce((max, num) => {
         return max;
     }
 }, top1[0] )
-console.log(numMax)
+console.log(numMax) //? 90
+
+
+let cardItems = [
+   { name: "jeans", price: 325},
+   { name: "Shirts", price: 100},
+   { name: "shoes", price: 225},
+   { name: "hat", price: 25},
+   { name: "t-shirts", price: 125},
+];
+let totalCard = cardItems.reduce((total, item) =>  total + item.price, 0)
+console.log(totalCard) //? 800
+let totalCard1 = cardItems.reduce((total, item) =>  total + item.name, 0)
+console.log(totalCard1)//? 0jeansShirtsshoeshatt-shirts 
+
+//!rest yazilan tum degerleri toplayarak ekler
+function concatenate(...args){
+    let name = ''
+    for (let arg of args) name += ' ' + arg;
+    return name
+   }
+   console.log(concatenate('Raymond', 'Red', 'Reddington'))
+   // Prints 'Raymond Red Reddington'
+   console.log(concatenate('kadir', "tugbanur"))
+
+   //! spread ise atanan dgerleri yayarak ekler
+
+let a = [1, 2, 3]
+let b = [4, 5]
+let mergedArray = [...a, ...b] 
+console.log(mergedArray) //?[1, 2, 3, 4, 5]
+
+
