@@ -9,24 +9,24 @@ for (let i = 1; i <= 10; i++) {
 }
 
 
- for (let i = 0; i != 10; i += 5) {
-console.log(i)
- }//? 0 5
+for (let i = 0; i != 10; i += 5) {
+  console.log(i)
+}//? 0 5
 
 
- 
+
 for (let i = 10; i >= 0; i--) {
-    console.log(i)
-  }//? 10 9876543210
+  console.log(i)
+}//? 10 9876543210
 
-  //? 0-100 Arasinda n adet rasgele tamsayi sayi ureten kodu for dongusu ile yaziniz..
+//? 0-100 Arasinda n adet rasgele tamsayi sayi ureten kodu for dongusu ile yaziniz..
 
-const n = +prompt("Kac adet rasgele sayi uretmek istersiniz?")
-
-for (let i = 1; i <= n; i++) {
-  const randomSayi = Math.round(Math.random() * 100)
-  console.log(`${i}. rasgele sayi : ${randomSayi}`)
+const n = Number(prompt("How many ramdom number do you want?"))
+for (i = 0; i <= n; i++) {
+  const randomNo = Math.round(Math.random() * 100)
+  console.log(`Number ${i} random number is ${randomNo}`);
 }
+
 
 
 // 2 aralikta verilen dogal sayilarin toplamini bulan kodu for dongusu ile yaziniz.
@@ -56,13 +56,13 @@ if (n3 >= n4) {
 
 //?break, continue
 for (let i = 0; i <= 10; i++) {
-    if (i <= 5) {
-      continue
-    }
-  
-    if (i === 8) {
-      break
-    }
-  
-    console.log(i)
+  if (i <= 5) {
+    continue
   }
+
+  if (i === 8) {
+    break
+  }
+
+  console.log(i)
+}
