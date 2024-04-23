@@ -22,7 +22,7 @@ for (let i = 10; i >= 0; i--) {
 //? 0-100 Arasinda n adet rasgele tamsayi sayi ureten kodu for dongusu ile yaziniz..
 
 const n = Number(prompt("How many ramdom number do you want?"))
-for (i = 0; i <= n; i++) {
+for (let i = 0; i <= n; i++) {
   const randomNo = Math.round(Math.random() * 100)
   console.log(`Number ${i} random number is ${randomNo}`);
 }
@@ -48,7 +48,7 @@ if (n3 >= n4) {
   console.log("Lütfen 1. sayiyi daha büyük giriniz")
 } else {
   for (n3; n3 <= n4; n3++) {
-    toplam += n1
+    toplam += n3
   }
 
   console.log(toplam)
@@ -64,5 +64,5 @@ for (let i = 0; i <= 10; i++) {
     break
   }
 
-  console.log(i)
+  console.log({i})
 }
