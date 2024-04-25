@@ -144,12 +144,23 @@ console.log(`${num1}${op}${num2} = ${hesapMakinasi(num1, num2, op)} olur`);
 
 
 //!Recursive functions ozyinelemeli fonksiyonlar
-//recursive method ile 5! = 5.(5-1)! n.(n-1)
+//? recursive method ile 5! = 5.(5-1)! n.(n-1)
 const faktoRecursive = (n) => {
     if (n <= 1) {
         return 1
     } else {
-     return   n * faktoRecursive(n - 1)
+        return n * faktoRecursive(n - 1)
     }
 }
 console.log(faktoRecursive(5)); //120
+
+//? for dongusu ile faktoriyel yapma
+
+const faktoriyel = (n) => {
+    let result = 1
+    for (i = n; i > 1; i--) {
+        result = result * i
+    }
+    return result
+}
+console.log(faktoriyel(5)); // 120
