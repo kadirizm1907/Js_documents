@@ -1,7 +1,7 @@
 //?String methods
 
 let name1 = "kadir yurtsever"
-for(let i = 0; i < name1.length; i++) {
+for (let i = 0; i < name1.length; i++) {
     console.log(name1[i]);
 }
 console.log(name1);
@@ -10,7 +10,7 @@ console.clear()
 
 let name2 = "kadir"
 let surName = "yurtsever"
-console.log(name2 +" "+surName); //?kadir yurtsever
+console.log(name2 + " " + surName); //?kadir yurtsever
 
 console.log(name2.concat(surName)); //? kadiryurtsever
 
@@ -32,5 +32,23 @@ console.log(sentence.split("").reverse().join(" ")) //? k a b   a t a   i l A
 //* string parcalama methodlari
 //* slice , Substring, Substr
 
+//!Slice
+
+let adAge = "Oku oku adam ol baban gibi, esek olma."
+
+console.log(adAge.slice(7)); //? adam ol baban gibi, esek olma.
+
+console.log(adAge.slice(7, 12)); //? adam
+console.log(adAge.slice(-11, -5)); //? esek
 
 
+//! Substring 
+//* slice dan farki sadece pozitif deger almasidir
+
+console.log(adAge.substring(0, 12)); //? Oku oku adam
+
+//-----------! Replace and replaceAll ---
+
+console.log(adAge.replace("O", "o")); //? oku oku adam ol baban gibi, esek olma.
+
+console.log(adAge.replaceAll("o", "O")); //? Oku Oku adam Ol baban gibi, esek Olma
