@@ -52,3 +52,23 @@ console.log(adAge.substring(0, 12)); //? Oku oku adam
 console.log(adAge.replace("O", "o")); //? oku oku adam ol baban gibi, esek olma.
 
 console.log(adAge.replaceAll("o", "O")); //? Oku Oku adam Ol baban gibi, esek Olma
+
+
+//! includes, indexOf and search
+let url = "www.kadiryurt.com.tr"
+let msg = url.includes("kadir") ? "Bu benim sitem" : "Bu yanlis site";
+console.log(msg); //? Bu benim sitem
+
+let indexOFF = "Merhaba, burasi benim dunyam"
+console.log(indexOFF.indexOf("benim")); //? 16
+console.log(indexOFF.indexOf("Benim")); //? -1
+
+
+let EzCumle = " Burasi cok guzel bir mekan ve yasanilacak Cok guzel seyler var burada"
+console.log(EzCumle.search("cok")); //? 8
+console.log(EzCumle.search(/u/gi)); //? 2 index numarsinin oldugu yerde
+console.log(EzCumle.search(/C/gi)); //? 8 index numarsinin oldugu yerde
+//? /g ile tum string icinde arattirdik /i ile de camelcase ozelligini iptal ettik
+
+console.log(EzCumle.match(/COK/gi));//? 'cok''Cok'
+
