@@ -1,3 +1,29 @@
+//!push(),pop(),shift(),unshift(),splice(),fill()
+
+
+const fruits = ["kiwi", "apple", "banana", "mango"]
+
+console.log(fruits.pop()); //? mango
+console.log(fruits); //? ['kiwi', 'apple', 'banana']
+
+console.log(fruits.push("orange"), fruits); //? 4   /  ['kiwi', 'apple', 'banana', 'orange']
+
+console.log(fruits.shift(), fruits); //? kiwi  /  ['apple', 'banana', 'orange']
+
+console.log(fruits.unshift("cherry"), fruits); //? 4 /   ['cherry', 'apple', 'banana', 'orange']
+
+console.log(fruits.splice(2, 1, "index 2 nin yerine gecer"), fruits);
+//? ['banana']    /   ['cherry', 'apple', 'index 2 nin yerine gecer', 'orange']
+
+console.log(fruits.splice(2, 0, "index 2 i yerinden eder"), fruits);
+//?[] /   ['cherry', 'apple', 'index 2 i yerinden eder', 'index 2 nin yerine gecer', 'orange']
+
+
+console.log(fruits.fill("fill me", 2, 4)); //?  ['cherry', 'apple', 'fill me', 'fill me', 'orange']
+console.log(fruits.fill(0));//? [0, 0, 0, 0, 0]
+
+
+
 //!  map()
 let numbers = [1, 2, 3];
 let tripleNumber = numbers.map((e) => e * 3)
@@ -48,42 +74,42 @@ console.log(multiNumb)//? 120
 
 let top1 = [10, 25, 7, 90, 55];
 let numMax = top1.reduce((max, num) => {
-    if(num > max){
+    if (num > max) {
         return num;
-    }else {
+    } else {
         return max;
     }
-}, top1[0] )
+}, top1[0])
 console.log(numMax) //? 90
 
 
 let cardItems = [
-   { name: "jeans", price: 325},
-   { name: "Shirts", price: 100},
-   { name: "shoes", price: 225},
-   { name: "hat", price: 25},
-   { name: "t-shirts", price: 125},
+    { name: "jeans", price: 325 },
+    { name: "Shirts", price: 100 },
+    { name: "shoes", price: 225 },
+    { name: "hat", price: 25 },
+    { name: "t-shirts", price: 125 },
 ];
-let totalCard = cardItems.reduce((total, item) =>  total + item.price, 0)
+let totalCard = cardItems.reduce((total, item) => total + item.price, 0)
 console.log(totalCard) //? 800
-let totalCard1 = cardItems.reduce((total, item) =>  total + item.name, 0)
+let totalCard1 = cardItems.reduce((total, item) => total + item.name, 0)
 console.log(totalCard1)//? 0jeansShirtsshoeshatt-shirts 
 
 //!rest yazilan tum degerleri toplayarak ekler
-function concatenate(...args){
+function concatenate(...args) {
     let name = ''
     for (let arg of args) name += ' ' + arg;
     return name
-   }
-   console.log(concatenate('Raymond', 'Red', 'Reddington'))
-   // Prints 'Raymond Red Reddington'
-   console.log(concatenate('kadir', "tugbanur"))
+}
+console.log(concatenate('Raymond', 'Red', 'Reddington'))
+// Prints 'Raymond Red Reddington'
+console.log(concatenate('kadir', "tugbanur"))
 
-   //! spread ise atanan degerleri yayarak ekler
+//! spread ise atanan degerleri yayarak ekler
 
 let a = [1, 2, 3]
 let b = [4, 5]
-let mergedArray = [...a, ...b] 
+let mergedArray = [...a, ...b]
 console.log(mergedArray) //?[1, 2, 3, 4, 5]
 
 
