@@ -15,16 +15,15 @@ for (let price of prices) {
 console.log("**************")
 
 //?forEach
-prices.forEach((p) => console.log(p * 1.1))
+prices.forEach((p) => console.log(p * 1.5))
 
 //? 2 parametreli forEach
-prices.forEach((price, index) => console.log("DEGER:", price, "SIRA:", index))
+prices.forEach((p, i) => console.log("price:", p, "no:", i + 1))
 
 //? prices'ın toplamını hesaplayiniz.
 let sum = 0
-prices.forEach((price) => (sum += price))
-console.log("SUM:", sum)
-
+prices.forEach((p) => sum += p)
+console.log("toplam:", sum);
 //? 3 paramtreli foreach
 //? callback func'da satir sayisi birden fazla oldugu icin suslu kullandik.
 //? foreach metodu void function'dır yani bir sey dondurmez.
