@@ -29,6 +29,8 @@ console.log("toplam:", sum);
 //? foreach metodu void function'dır yani bir sey dondurmez.
 prices.forEach((p, i, arr) => {
   if (p < 270) {
+    arr[i] = p * 1.5
+  } else {
     arr[i] = p * 1.1
   }
 })
@@ -50,23 +52,23 @@ const upperCasedNames = names.map((n) => n.toLocaleUpperCase())
 console.log(upperCasedNames)
 
 //? Foreach ile zorlama çözüm
-const upperNames = []
-names.forEach((n) => upperNames.push(n.toLocaleUpperCase()))
-console.log(upperNames)
+const lowerNames = []
+names.forEach((n) => lowerNames.push(n.toLocaleLowerCase()))
+console.log(lowerNames)
 
 //?-------------- ÖRNEK -------------------
 //? tlPrices dizisindeki rakamlarin Euro ve dolar
 //? karsiliklarini hesaplatarak yeni dizelere kaydediniz
-const euro = 29.8
-const dolar = 27.97
+const euro = 34.8
+const dolar = 32.97
 
 const tlPrices = [100, 150, 100, 50, 80]
-
+const euroPrices = tlPrices.map((tl) => Number((tl / euro)).toFixed(3))
 const dolarPrices = tlPrices.map((tl) => Number((tl / dolar).toFixed(2)))
-const euroPrices = tlPrices.map((tl) => Number((tl / euro).toFixed(2)))
 
-console.log(dolarPrices)
-console.log(euroPrices)
+
+console.log("Dolar cinsinden fiyatlar:", dolarPrices)
+console.log("Euro cinsinden fiyatlar:", euroPrices)
 
 //* =======================================
 //*             FILTER METHOD
