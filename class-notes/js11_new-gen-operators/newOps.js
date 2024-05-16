@@ -178,7 +178,7 @@ console.log(p4)
 //?REST: Array
 const araclar = ["ATV", "Kamyonet", "TIR", "Kamyon", "Araba"]
 const [a1, a2, ...geriKalanAraclar] = araclar
-console.log(geriKalanAraclar) //? ["Kamyonet", "TIR", "Kamyon"]
+console.log(geriKalanAraclar) //? ["TIR", "Kamyon", "Araba"]
 
 //?REST: Object
 const veri = {
@@ -189,7 +189,7 @@ const veri = {
 }
 
 const { id, product, ...productStock } = veri
-console.log(productStock)
+console.log(productStock) //?{brand: 'Apple', stock: 100}
 
 //! 2- Bir fonksiyonun argumanlarini diziye cevirmek icin kullanilabilir.
 
@@ -201,9 +201,9 @@ const sumAll = (...numbers) => {
   return numbers.reduce((acc, val) => acc + val)
 }
 
-console.log("SUM:", sum(2, 5, 6, 7, 8))
-console.log("SUM-ALL:", sumAll(2, 5, 6, 7, 8))
-console.log("SUM-ALL:", sumAll(3, 4, 5))
+console.log("SUM:", sum(2, 5, 6, 7, 8))//? 7
+console.log("SUM-ALL:", sumAll(2, 5, 6, 7, 8)) //? 28
+console.log("SUM-ALL:", sumAll(3, 4, 5)) //? 12
 
 //* =============================================
 //*  SPREAD (...)
@@ -216,10 +216,10 @@ const karaAracları = ["araba", "bisiklet", "marti"]
 
 const tasitlar = [ucanAraclar, karaAracları] //!nested array
 console.log(tasitlar)
-console.log(tasitlar[1][2])
+console.log(tasitlar[1][2])//? marti
 
 const tasitlarFlat = [...karaAracları, "hoverCraft", "gemi", ...ucanAraclar]
-console.log(tasitlarFlat)
+console.log(tasitlarFlat) //? ['araba', 'bisiklet', 'marti', 'hoverCraft', 'gemi', 'helicopter', 'drone', 'ucak', 'fuze']
 
 //?Ornek:
 const slogan = "Reinvent Your self"
@@ -229,25 +229,25 @@ console.log(sloganArray)
 //?Ornek:
 //? Spread ile bir iterable(array), non-iterable'a cevirlebilir.
 const sayilar = [2, 4, 5, 13, 56, 23]
-console.log(Math.max(...sayilar))
+console.log(Math.max(...sayilar))//? 56
 
 const ciftler = [2, 4, 6]
 const tekler = [1, 3, 5]
 
 const yeniSayilar = ciftler //? Sig Kopyalama (Derin Kopyalama)
 
-console.log(yeniSayilar, ciftler)
+console.log(yeniSayilar, ciftler)//! (3) [2, 4, 6], (3) [2, 4, 6]
 yeniSayilar.push(8)
-console.log(yeniSayilar, ciftler)
+console.log(yeniSayilar, ciftler)//! (4) [2, 4, 6, 8], (4) [2, 4, 6, 8]
 
 //? Kopyalama Spread ile yapilirsa
 const yeniArraySpread = [...ciftler]
-console.log(yeniArraySpread, ciftler)
+console.log(yeniArraySpread, ciftler)//! (4) [2, 4, 6, 8], (4) [2, 4, 6, 8]
 
 //? Spread ile yapılan kopyalamada tam olarak sig kopyalama gerceklesmez. Dolayısiyla birisindeki degisiklik digerine yansımaz.
 //? ISTISNA: Eger dizide nesting (içiçe veri) varsa onlar icin sig kopyalama gibi calisir.
 yeniArraySpread.push(10)
-console.log(yeniArraySpread, ciftler)
+console.log(yeniArraySpread, ciftler) //! (5) [2, 4, 6, 8, 10], (4) [2, 4, 6, 8]
 
 //? Tamamen Deep Kopyalama icin JSON.stringfy() - JSON.parse()
 
