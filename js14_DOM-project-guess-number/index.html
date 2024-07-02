@@ -4,34 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="game.css">
-    <title>Guess My Number</title>
+    <link rel="stylesheet" href="sGame.css">
+    <title>Guess The Number</title>
 </head>
 
 <body>
 
     <header>
-        <h1>Guess My Number</h1>
-        <p class="between">(1-20)</p>
-        <button class="btn again">Again</button>
-        <div class="number">?</div>
+        <p class="top-score-label">Top-Score: <span class="top-score">0</span></p>
+        <p class="score-label">Your Score: <span class="score">0</span> </p>
     </header>
 
     <main>
         <section class="left">
-            <input type="number" class="guess">
+            <h1>Guess My Number</h1>
+            <p class="between">Enter the number between 1-20</p>
+            <div class="number-labels">
+                <input id="guess-number" placeholder="..." type="number" class="guess">
+                <p id="realNumber" class="guess">?</p>
+            </div>
+            <p class="msg">Try and guess it!</p>
+            <p class="strike">You have <span id="str"> 5 </span> strikes left</p>
             <button class="btn check">Check</button>
+            <button class="btn again">Play Again</button>
         </section>
 
         <section class="right">
-            <p class="msg">Oyun Başlıyor...</p>
-            <p class="score-label">💯Score: <span class="score">10</span> </p>
-            <p class="top-score-label">🏅Top-Score: <span class="top-score">0</span></p>
+            <img id="gifT" class="gif thinking" src="./img/thinking.gif" alt="thinkingGif">
+            <img id="gifC" class="gif cong" src="./img/congratulation.gif" alt="congGif">
+            <img id="gifN" class="gif no" src="./img/no.gif" alt="NoGif">
+            <audio id="soundYes" src="./sound/yes.mp3"></audio>
+            <audio id="soundNo" src="./sound/no.mp3"></audio>
+
+
         </section>
     </main>
 
     <!-- <script src="game.js"></script> -->
-    <script src="./gamestorage.js"></script>
+    <script src="./sGame.js"></script>
+    <!-- <script src="./gamestorage.js"></script> -->
 </body>
 
 </html>
