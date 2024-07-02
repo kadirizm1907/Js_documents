@@ -5,12 +5,12 @@
 }
 /*? CSS Variables */
 :root {
-  --orange: #ff7623;
-  --orange-light: #f2994a;
-  --orange-dark: orangered;
-  --gray-light: #f5f5f5;
-  --gray-medium: #bdbdbd;
-  --fume: #4e5150;
+  --orange: #fd7200;
+  --orange-light: #0290ac;
+  --orange-dark: rgb(5, 144, 144);
+  --gray-light: #ead4d4;
+  --gray-medium: #daabab;
+  --fume: #339c79;
 }
 
 body {
@@ -33,7 +33,7 @@ i:hover {
 header {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 1rem;
-  background-color: white;
+  background-color: rgb(235, 204, 204);
   color: var(--orange-dark);
   border-bottom: 1px solid var(--gray-medium);
 }
@@ -41,7 +41,7 @@ header {
 /** NAV */
 nav {
   padding: 0 1rem;
-  background-color: white;
+  background-color: rgba(13, 65, 111, 0.677);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,12 +51,10 @@ nav .my-cart {
   font-weight: 600;
   padding: 1rem;
 }
-nav .my-cart span {
-  font-weight: 100;
-  color: var(--gray-medium);
-}
 nav .delete-div {
   color: var(--orange);
+  font-weight: 500;
+  text-shadow:1px 1px 2px #100909;
   font-size: 14px;
 }
 
@@ -68,18 +66,20 @@ main {
   padding: 1rem;
   gap: 1rem 4rem;
 }
-
 /*? Product List section */
 main .product-list {
   flex: 4;
   border-radius: 10px;
   background-color: white;
 }
+
 main .product-list .store {
+  background-color: #c5d0d5;
   padding: 1.2rem 0.5rem;
   font-size: 14px;
   line-height: 20px;
   border-bottom: 2px solid var(--gray-light);
+  border-radius: 10px 10px 0 0;
 }
 
 main .product-list .no-product {
@@ -92,14 +92,16 @@ main .product {
   display: flex;
   gap: 1rem;
   padding: 1rem;
-  border-bottom: 2px solid var(--gray-light);
+  background-color: #e7dee2;
+  border: 3px solid var(--gray-medium);
+  
 }
 
 main .product img {
   width: 120px;
   height: 120px;
   border-radius: 5px;
-  border: 1px solid var(--gray-medium);
+  border: 3px solid var(--gray-medium);
 }
 
 main .product-info {
@@ -141,7 +143,9 @@ main .buttons-div .plus-minus {
   border: 1px solid var(--gray-light);
   border-radius: 50px;
   display: inline-block;
+  background-color: rgba(248, 204, 197, 0.776);
 }
+
 
 main .buttons-div i {
   margin: 0.5rem;
@@ -154,7 +158,7 @@ main .price-table {
   padding: 2rem;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid var(--gray-medium);
+  border: 3px solid var(--gray-medium);
   flex: 1;
   text-align: center;
   min-width: 250px;
@@ -219,15 +223,9 @@ main .total-info .text-div {
   main .buttons-div .dollar {
     margin-top: 1rem;
     font-size: 20px;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  main .product img {
+  }  main .product img {
     width: 100px;
     height: 100px;
   }
-  main .buttons-div i {
-    margin: 0.1rem;
-  }
 }
+
