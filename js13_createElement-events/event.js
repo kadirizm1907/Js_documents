@@ -65,5 +65,6 @@ input.addEventListener("keyup", (event) => {
 
   if (event.code === "Backspace") {
     //TODO : Liste elemetnini en son elemani silinecek
+    
   }
 })
